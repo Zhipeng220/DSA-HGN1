@@ -259,6 +259,22 @@ python main.py finetune_evaluation \
     --work_dir work_dir/SHREC/hyperhand_bmotion \
     --device 0
 ```
+#### 连续运行joint和jmotion
+```bash
+python main.py finetune_evaluation \
+    --config config/SHREC/joint/joint.yaml \
+    --work_dir work_dir/SHREC/joint \
+    --device 0 \
+    --batch_size 32 \
+    --num_epoch 60 \
+    && \
+python main.py finetune_evaluation \
+    --config config/SHREC/Jmotion/jmotion.yaml \
+    --work_dir work_dir/SHREC/jmotion \
+    --device 0 \
+    --batch_size 32 \
+    --num_epoch 60
+```
 
 ### Resume Training from Checkpoint
 
